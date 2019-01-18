@@ -1,0 +1,18 @@
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publish Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let post of posts'>
+        <td><a [routerLink]="['/routePath', post.id]" routerLinkActive="router-link-active" >{{post.title}}</a></td>
+        <td>{{post.author}}</td>
+        <td>{{post.publish_date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
