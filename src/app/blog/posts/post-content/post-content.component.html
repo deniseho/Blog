@@ -1,0 +1,16 @@
+<a [routerLink]="['/posts']" routerLinkActive="router-link-active">Back to list</a>
+<div *ngIf="post">
+  <h2>{{post.title}}</h2>
+  <h5>{{post.author}}</h5>
+  <!-- <div>{{post.slug}}</div> -->
+  <div innerHTML={{post.content}}></div>
+</div>
+
+<div *ngIf="comments">
+  <h3>Comments:</h3>
+  <div *ngFor="let comment of comments">
+    <h5>{{comment.user}}</h5>
+    <div>{{comment.date}}</div>
+    <div innerHTML="{{comment.content}}"></div>
+  </div>
+</div>

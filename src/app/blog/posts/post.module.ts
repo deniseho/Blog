@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostContentComponent } from './post-content/post-content.component';
-import { PostService } from './post.service';
+import { PostService } from '../../../services/post.service';
+import { CommentService } from 'src/services/comment.service';
 
 @NgModule( {
   declarations: [
@@ -18,7 +19,8 @@ import { PostService } from './post.service';
     ] ),
   ],
   providers: [
-    PostService
+    PostService,
+    CommentService
   ]
 } )
 export class PostModule { }
