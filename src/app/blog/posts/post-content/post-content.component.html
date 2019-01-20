@@ -8,9 +8,76 @@
 
 <div *ngIf="comments">
   <h3>Comments:</h3>
-  <div *ngFor="let comment of comments">
-    <h5>{{comment.user}}</h5>
-    <div>{{comment.date}}</div>
-    <div innerHTML="{{comment.content}}"></div>
-  </div>
+  <ul *ngFor="let comment of comments | commentFilter: null">
+    <h3>{{comment.id}}</h3>
+    <li *ngFor="let subcat of comments | commentFilter: comment.parent_id">
+      {{subcat.id}}
+      <ul>
+        <li *ngFor="let subcat2 of comments | commentFilter: 1">
+          {{subcat2.id}}
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+
+  <!-- <div *ngFor="let comment of comments | commentFilter: null">
+    <div>
+      <h5>{{comment.user}}</h5>
+      <div>{{comment.date}}</div>
+      <div innerHTML="{{comment.content}}"></div>
+      <div>
+        <ul>
+          <li>
+            id: {{comment.id}}
+          </li>
+          <li>
+            post id: {{comment.postId}}
+          </li>
+          <li>
+            parent_id: {{comment.parent_id}}
+          </li>
+        </ul>
+        <div *ngFor="let subComment of comments | commentFilter: comment.parent_id">
+          <ul>
+            <li>
+              - id: {{subComment.id}}
+            </li>
+            <li>
+              - postId: {{subComment.postId}}
+            </li>
+            <li>
+              - parent_id: {{subComment.parent_id}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
 </div>
+
+<form>
+  <p>
+    Name: <input type="text" [(ngModel)]="name">
+  </p>
+
+  <p>
+    Comment: <input type="text" [(ngModel)]="comment">
+  </p>
+
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+
+<p>
+  Name: 
+</p>
+
+<p>
+  Comment:
+</p>
+
+<p>
+  Time: 
+</p>

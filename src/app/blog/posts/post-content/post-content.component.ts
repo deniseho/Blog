@@ -17,6 +17,9 @@ export class PostContentComponent implements OnInit {
   post: IPost;
   comments: IComment[];
 
+  // leave a comment
+  name: '';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,

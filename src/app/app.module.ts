@@ -6,10 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PostModule } from './blog/posts/post.module';
 import { RouterModule } from '@angular/router';
+import { CommentComponent } from './blog/comments/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,

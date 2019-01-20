@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/services/post.service';
-import { Post } from 'src/interfaces/post';
-import { Comment } from 'src/interfaces/comment';
+import { IPost } from 'src/interfaces/post';
+import { IComment } from 'src/interfaces/comment';
 import { Router } from '@angular/router';
 import { CommentService } from 'src/services/comment.service';
 
@@ -12,8 +12,8 @@ import { CommentService } from 'src/services/comment.service';
 })
 export class PostsListComponent implements OnInit {
 
-  posts: Post[] = [];
-  comments: Comment[] = [];
+  posts: IPost[] = [];
+  comments: IComment[] = [];
 
   constructor(
     private postService: PostService,
@@ -27,12 +27,6 @@ export class PostsListComponent implements OnInit {
         this.posts = data;
       }
     );
-
-    // this.commentService.getAllComments().subscribe(
-    //   data => {
-    //     this.comments = data;
-    //   }
-    // );
   }
 
 

@@ -5,11 +5,13 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostContentComponent } from './post-content/post-content.component';
 import { PostService } from '../../../services/post.service';
 import { CommentService } from 'src/services/comment.service';
+import { CommentFilterPipe } from 'src/app/pipes/comment-filter.pipe';
 
 @NgModule( {
   declarations: [
     PostsListComponent,
-    PostContentComponent
+    PostContentComponent,
+    CommentFilterPipe,
   ],
   imports: [
     CommonModule,
